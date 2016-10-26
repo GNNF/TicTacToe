@@ -12,5 +12,7 @@ public class Player{
 		return name;
 	}
 
-
+	public void setName(String pname){
+		this.name = pname;
+	}
 }
