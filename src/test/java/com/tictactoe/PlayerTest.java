@@ -10,8 +10,17 @@ public class PlayerTest{
     }
 
 	@Test
-	public void testName(){
+	public void testGetName(){
 		Player player = new Player();
 		assertEquals("", player.getName());
+	}
+
+	@Test
+	public void testSetName(){
+		Player player = new Player();
+		String name = "Jon";
+		player.setName(name);
+		assertEquals("Jon", player.getName());
+		
 	}
 }
