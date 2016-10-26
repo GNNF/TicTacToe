@@ -21,6 +21,5 @@ public class PlayerTest{
 		String name = "Jon";
 		player.setName(name);
 		assertEquals("Jon", player.getName());
-		
 	}
 }

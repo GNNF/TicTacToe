@@ -1,5 +1,5 @@
 package com.tictactoe;
 
-public class humanPlayer{
+public class HumanPlayer{
 
 }

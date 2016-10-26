@@ -1,5 +1,5 @@
 package com.tictactoe;
 
-public class computerPlayer{
+public class ComputerPlayer{
 
 }
