@@ -7,7 +7,8 @@ public class BoardTest {
 
 	@Test
     public void testIsOver() {
-        
+    	Board board;
+        assertEquals(true, board.isOver());
     }
 
 }
