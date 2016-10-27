@@ -47,7 +47,16 @@ public class Board {
 	public boolean isVictorious(char symbol) {
 		if (this.isAllowedSymbol(symbol)) {
 			for (int[] possibleWins : WIN_CONDITIONS) {
-				if (symbol == board[possibleWins[0]] && symbol == board[possibleWins[1]] && symbol == board[possibleWins[2]]) {
+				boolean allSame = false;
+				for (int currentCell : possibleWins) {
+					if (symbol == board[currentCell]) {
+						allSame = true;
+					} else {
+						allSame = false;
+						break;
+					}
+				}
+				if (allSame) {
 					return true;
 				}
 			}
