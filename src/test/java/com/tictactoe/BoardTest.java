@@ -24,6 +24,33 @@ public class BoardTest {
     }
 
     @Test
+    public void testIsDraw() {
+    	Board board = new Board();
+    	for (int i = 0; i < 5; i++) {
+    		board.checkCell(i, 'O');
+    	}
+        assertEquals(false, board.isGameOver());
+    }
+
+    @Test
+    public void testXWon() {
+    	Board board = new Board();
+    	board.checkCell(0, 'X');
+    	board.checkCell(1, 'X');
+    	board.checkCell(2, 'X');
+        assertEquals(true, board.isVictorious('X'));
+    }
+
+    @Test
+    public void testOWon() {
+    	Board board = new Board();
+    	board.checkCell(1, 'O');
+    	board.checkCell(4, 'O');
+    	board.checkCell(7, 'O');
+        assertEquals(true, board.isVictorious('O'));
+    }
+
+    @Test
     public void testCheckCellOne() {
     	Board board = new Board();
     	assertEquals(true, board.checkCell(4, 'X'));
