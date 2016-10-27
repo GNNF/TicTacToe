@@ -1,20 +1,21 @@
 package com.tictactoe;
 
 public class Board {
-	char board[];
+	private char board[];
 
 	Board() {
 		this.init();
 	}
 
 	public void init() {
+		board = new char[9];
 		for (int i = 0; i < 9; i++) {
 			board[i] = (char)i;
 		}
 	}
 
 	public boolean isOver() {
-		return false;
+		return true;
 	}
 
 }
