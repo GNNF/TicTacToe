@@ -17,19 +17,26 @@ public class BoardTest {
     @Test
     public void testIsGameNotOver() {
     	Board board = new Board();
-    	for (int i = 0; i < 5; i++) {
-    		board.checkCell(i, 'O');
-    	}
+    	board.checkCell(0, 'X');
+    	board.checkCell(1, 'O');
+    	board.checkCell(2, 'X');
+    	board.checkCell(3, 'X');
         assertEquals(false, board.isGameOver());
     }
 
     @Test
     public void testIsDraw() {
     	Board board = new Board();
-    	for (int i = 0; i < 5; i++) {
-    		board.checkCell(i, 'O');
-    	}
-        assertEquals(false, board.isGameOver());
+    	board.checkCell(0, 'X');
+    	board.checkCell(1, 'O');
+    	board.checkCell(2, 'X');
+    	board.checkCell(3, 'X');
+    	board.checkCell(4, 'O');
+    	board.checkCell(5, 'X');
+    	board.checkCell(6, 'O');
+    	board.checkCell(7, 'X');
+    	board.checkCell(8, 'O');
+        assertEquals(true, board.isDraw());
     }
 
     @Test

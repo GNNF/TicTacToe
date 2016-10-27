@@ -41,16 +41,20 @@ public class Board {
 	}
 
 	public boolean isGameOver() {
-		return totalPlays == MAX_SIZE;
+		return (totalPlays == MAX_SIZE || this.isVictorious('O') || this.isVictorious('X'));
 	}
 
 	public boolean isVictorious(char symbol) {
 		for (int[] possibleWins : WIN_CONDITIONS) {
-			if (symbol == board [possibleWins[0]] && symbol == board [possibleWins[1]] && symbol == board [possibleWins[2]]) {
+			if (symbol == board[possibleWins[0]] && symbol == board[possibleWins[1]] && symbol == board[possibleWins[2]]) {
 				return true;
 			}
 		}
 		return false;
+	}
+
+	public boolean isDraw() {
+		return (!isVictorious('X') && !isVictorious('O') && totalPlays == MAX_SIZE);
 	}
 
 	private boolean isAllowedSymbol(char symbol) {
