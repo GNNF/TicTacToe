@@ -45,9 +45,11 @@ public class Board {
 	}
 
 	public boolean isVictorious(char symbol) {
-		for (int[] possibleWins : WIN_CONDITIONS) {
-			if (symbol == board[possibleWins[0]] && symbol == board[possibleWins[1]] && symbol == board[possibleWins[2]]) {
-				return true;
+		if (this.isAllowedSymbol(symbol)) {
+			for (int[] possibleWins : WIN_CONDITIONS) {
+				if (symbol == board[possibleWins[0]] && symbol == board[possibleWins[1]] && symbol == board[possibleWins[2]]) {
+					return true;
+				}
 			}
 		}
 		return false;
