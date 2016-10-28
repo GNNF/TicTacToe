@@ -28,6 +28,15 @@ public class Board {
 		}
 	}
 
+	public boolean isCellEmpty(int cell) {
+		if (cell < MAX_SIZE && cell >= 0) {
+			if (board[cell] == cell)
+				return true;
+		}
+		//Unable to check cell since its out of bounds
+		return false;
+	}
+
 	public boolean checkCell(int cell, char symbol) {
 		if (cell < MAX_SIZE && cell >= 0) {
 			if (this.isAllowedSymbol(symbol)) {

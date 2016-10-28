@@ -81,4 +81,18 @@ public class BoardTest {
     	assertEquals(true, board.checkCell(8, 'O'));
     }
 
+    @Test
+    public void testIsCellEmpty() {
+    	Board board = new Board();
+    	board.checkCell(8, 'O');
+    	assertEquals(false, board.isCellEmpty(8));
+    }
+
+    @Test
+    public void testIsCellNotEmpty() {
+    	Board board = new Board();
+    	board.checkCell(7, 'O');
+    	assertEquals(true, board.isCellEmpty(8));
+    }
+
 }
