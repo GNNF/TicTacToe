@@ -7,6 +7,7 @@ public class Player{
 
 	public Player(){
 		name = "";
+		sybbol = "x";
 	}
 	public String getName(){
 		return name;
