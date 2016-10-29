@@ -3,7 +3,7 @@ package com.tictactoe;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class PlayerTest{
+public class PlayerTest {
 
 	public static void main(String args[]) {
       org.junit.runner.JUnitCore.main("com.tictactoe.Player");
@@ -21,5 +21,11 @@ public class PlayerTest{
 		String name = "Jon";
 		player.setName(name);
 		assertEquals(name, player.getName());
+	}
+
+	@Test
+	public void testGetSymbol(){
+		Player player = new Player();
+		assertEquals('X', player.getSymbol());
 	}
 }
