@@ -37,3 +37,7 @@ test {
         events "PASSED", "STARTED", "FAILED", "SKIPPED"
     }
 }
+
+task stage {
+    dependsOn installDist
+}
