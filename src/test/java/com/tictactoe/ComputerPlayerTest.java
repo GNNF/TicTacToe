@@ -2,6 +2,7 @@ package com.tictactoe;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class ComputerPlayerTest{
 
@@ -19,5 +20,12 @@ public class ComputerPlayerTest{
 	public void testGetSymbol(){
 		ComputerPlayer computer = new ComputerPlayer();
 		assertEquals('O', computer.getSymbol());
+	}
+
+	@Test
+	public void testMakePlay(){
+		ComputerPlayer computer = new ComputerPlayer();
+		int random = computer.makePlay();
+		assertNotNull(random);
 	}
 }
