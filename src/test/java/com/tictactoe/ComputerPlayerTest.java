@@ -18,6 +18,6 @@ public class ComputerPlayerTest{
 	@Test
 	public void testGetSymbol(){
 		ComputerPlayer computer = new ComputerPlayer();
-		assertEquals("O", computer.getSymbol());
+		assertEquals('O', computer.getSymbol());
 	}
 }
