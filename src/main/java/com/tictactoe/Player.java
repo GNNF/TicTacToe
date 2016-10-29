@@ -2,8 +2,8 @@ package com.tictactoe;
 
 public class Player {
 
-	private String name;
-	private char symbol;
+	protected String name;
+	protected char symbol;
 
 	public Player() {
 		name = "Unknown";

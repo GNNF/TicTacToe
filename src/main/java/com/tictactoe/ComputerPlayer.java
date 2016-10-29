@@ -1,31 +1,28 @@
 package com.tictactoe;
 import java.util.Random;
 
-public class ComputerPlayer{
+public class ComputerPlayer extends Player {
 
-	private static String name;
+	private static Random randomplay;
 
-	private static Random randomplay = new Random();
+	public ComputerPlayer(){
+		this.init();
+		randomplay = new Random();
+	}
 
-	public final char symbol;
+	public ComputerPlayer(long seed){
+		this.init();
+		randomplay = new Random(seed);
+	}
 
-	public  ComputerPlayer(){
-		name = "computer";
+	private void init() {
+		name = "Computer";
 		symbol = 'O';
-
-	}
-	public  String getName(){
-		return name;
-	}
-
-	public char getSymbol(){
-		return symbol;
 	}
 
 	//returns a random number between 0 and 8
 	public int makePlay(){
 		int x = randomplay.nextInt(8 - 0 + 1) + 0;
-
 		return x;
 	}
 }
