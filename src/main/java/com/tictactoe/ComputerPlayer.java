@@ -24,7 +24,7 @@ public class ComputerPlayer{
 
 	//returns a random number between 0 and 8
 	public int makePlay(){
-		int x = randomplay.nextInt(8) + 0;
+		int x = randomplay.nextInt(8 - 0 + 1) + 0;
 
 		return x;
 	}
