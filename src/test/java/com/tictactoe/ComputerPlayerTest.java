@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class ComputerPlayerTest{
+public class ComputerPlayerTest {
 
 	public static void main(String args[]) {
       org.junit.runner.JUnitCore.main("com.tictactoe.ComputerPlayer");
@@ -13,7 +13,7 @@ public class ComputerPlayerTest{
     @Test
 	public void testGetName(){
 		ComputerPlayer computer = new ComputerPlayer();
-		assertEquals("computer", computer.getName());
+		assertEquals("Computer", computer.getName());
 	}
 
 	@Test
@@ -24,8 +24,7 @@ public class ComputerPlayerTest{
 
 	@Test
 	public void testMakePlay(){
-		ComputerPlayer computer = new ComputerPlayer();
-		int random = computer.makePlay();
-		assertNotNull(random);
+		ComputerPlayer computer = new ComputerPlayer(150);
+		assertEquals(8, computer.makePlay());
 	}
 }
