@@ -22,30 +22,27 @@ public class Board {
 
 	public void init() {
 		board = new char[MAX_SIZE];
-		totalPlays = 0;
-		for (int i = 0; i < MAX_SIZE; i++) {
-			board[i] = (char)i;
-		}
+		this.clear();
 	}
 
 	public boolean isCellEmpty(int cell) {
 		if (cell < MAX_SIZE && cell >= 0) {
-			if (board[cell] == cell)
+			if (board[cell] == ' ')
 				return true;
 		}
-		//Unable to check cell since its out of bounds
+		//cell is out of bounds or not empty
 		return false;
 	}
 
 	public boolean checkCell(int cell, char symbol) {
-		if (cell < MAX_SIZE && cell >= 0) {
+		if (this.isCellEmpty(cell)) {
 			if (this.isAllowedSymbol(symbol)) {
 				board[cell] = symbol;
 				totalPlays++;
 				return true;
 			}
 		}
-		//Unable to check cell since its out of bounds
+		//Unable to check cell since its out of bounds, not empty or symbol is not allowed
 		return false;
 	}
 
@@ -84,16 +81,22 @@ public class Board {
 		}
 		return false;
 	}
-
-	public char getVictorSymbol() {
-		if (isVictorious('X')) {
-			return 'X';
-		} else if (isVictorious('O')) {
-			return 'O';
-		} else {
-			Character ret = null;
-			return ret;
+	
+	public String toString() {
+		String currentBoard =
+		  " " + board[0] + " | " + board[1] + " | " + board[2] + " \n"
+		+ "-----------\n"
+		+ " " + board[3] + " | " + board[4] + " | " + board[5] + " \n"
+		+ "-----------\n"
+		+ " " + board[6] + " | " + board[7] + " | " + board[8] + " \n";
+		return currentBoard;
+	}
+	
+	public void clear() {
+		totalPlays = 0;
+		for (int i = 0; i < MAX_SIZE; i++) {
+			board[i] = ' ';
 		}
 	}
-
 }
+

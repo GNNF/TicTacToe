@@ -94,14 +94,23 @@ public class BoardTest {
     	board.checkCell(7, 'O');
     	assertEquals(true, board.isCellEmpty(8));
     }
-
-    @Test
-    public void testGetVictor() {
-        Board board = new Board();
-        board.checkCell(0, 'X');
-        board.checkCell(4, 'X');
-        board.checkCell(8, 'X');
-        assertEquals('X', board.getVictorSymbol());
-    }
-
+	
+	@Test
+	public void testToStringOnEmptyBoard() {
+		Board board = new Board();
+		String test = "   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n";
+		assertEquals(test, board.toString());
+	}
+	
+	@Test
+	public void testToStringOnNonEmptyBoard() {
+		Board board = new Board();
+		board.checkCell(0, 'X');
+		board.checkCell(7, 'X');
+		board.checkCell(1, 'O');
+		board.checkCell(2, 'O');
+		board.checkCell(4, 'O');
+		String test = " X | O | O \n-----------\n   | O |   \n-----------\n   | X |   \n";
+		assertEquals(test, board.toString());
+	}
 }
