@@ -14,4 +14,10 @@ public class ComputerPlayerTest{
 		ComputerPlayer computer = new ComputerPlayer();
 		assertEquals("computer", computer.getName());
 	}
+
+	@Test
+	public void testGetSymbol(){
+		ComputerPlayer computer = new ComputerPlayer();
+		assertEquals("O", computer.getSymbol());
+	}
 }
