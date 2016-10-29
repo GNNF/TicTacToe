@@ -12,7 +12,7 @@ public class PlayerTest{
 	@Test
 	public void testGetName(){
 		Player player = new Player();
-		assertEquals("", player.getName());
+		assertEquals("Unknown", player.getName());
 	}
 
 	@Test
@@ -20,6 +20,6 @@ public class PlayerTest{
 		Player player = new Player();
 		String name = "Jon";
 		player.setName(name);
-		assertEquals("Jon", player.getName());
+		assertEquals(name, player.getName());
 	}
 }

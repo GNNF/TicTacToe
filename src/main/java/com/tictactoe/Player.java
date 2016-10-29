@@ -1,14 +1,15 @@
 package com.tictactoe;
 
-public class Player{
+public class Player {
 
 	private String name;
 	private char symbol;
 
 	public Player(){
-		name = "";
-		symbol = 'x';
+		name = "Unknown";
+		symbol = 'X';
 	}
+	
 	public String getName(){
 		return name;
 	}
