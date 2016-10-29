@@ -85,4 +85,15 @@ public class Board {
 		return false;
 	}
 
+	public char getVictorSymbol() {
+		if (isVictorious('X')) {
+			return 'X';
+		} else if (isVictorious('O')) {
+			return 'O';
+		} else {
+			Character ret = null;
+			return ret;
+		}
+	}
+
 }

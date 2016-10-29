@@ -95,4 +95,13 @@ public class BoardTest {
     	assertEquals(true, board.isCellEmpty(8));
     }
 
+    @Test
+    public void testGetVictor() {
+        Board board = new Board();
+        board.checkCell(0, 'X');
+        board.checkCell(4, 'X');
+        board.checkCell(8, 'X');
+        assertEquals('X', board.getVictorSymbol());
+    }
+
 }
