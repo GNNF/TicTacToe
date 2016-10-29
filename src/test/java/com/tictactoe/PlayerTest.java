@@ -28,4 +28,12 @@ public class PlayerTest {
 		Player player = new Player();
 		assertEquals('X', player.getSymbol());
 	}
+
+	@Test
+	public void testSetSymbol(){
+		Player player = new Player();
+		char symbol = 'O';
+		player.setSymbol(symbol);
+		assertEquals(symbol, player.getSymbol());
+	}
 }

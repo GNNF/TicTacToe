@@ -18,6 +18,9 @@ public class Player {
 		this.name = pname;
 	}
 
+	public void setSymbol(char psymbol) {
+		this.symbol = psymbol;
+	}
 	public char getSymbol() {
 		return symbol;
 	}
