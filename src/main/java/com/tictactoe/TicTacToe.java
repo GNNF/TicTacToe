@@ -21,29 +21,36 @@ public class TicTacToe {
 		computer = new ComputerPlayer();
 	}
 	
+	public static void main(String[] args)
+	{
+		TicTacToe ticTacToe = new TicTacToe();
+	}
+	
 	public void game() {
 		this.instructions();
 		do {
 			board.clear();
+			this.displayBoard();
 			do {
-				this.displayBoard();
 				this.makeMove();
-				if(this.isGameOver()) {
+				this.displayBoard();
+				if(this.isGameOver(player.getName())) {
 					break;
 				} else {
 					this.computerTurn();
+					this.displayBoard();
 				}
-			} while(!this.isGameOver());
+			} while(!this.isGameOver(computer.getName()));
 		} while(continuePlaying());
 	}
 	
-	public boolean isGameOver() {
+	public boolean isGameOver(String winner) {
 		if(board.isGameOver()) {
 			if(board.isDraw()) {
 				System.out.println("Draw!");
 				return true;
 			} else {
-				System.out.println(player.getSymbol() + " is Victorious!");
+				System.out.println(winner + " is Victorious!");
 				return true;
 			}
 		}
