@@ -13,4 +13,5 @@ Late term assignment for the course Software Engineering in Reykjavík Universit
 # Documents
 * [Administrator manual](doc/AdminManual.md)
 * [Class diagram](doc/ticTacToe_classDiagram.png)
+* [Developer manual](doc/DevManual.md)
 * [Design report](doc/DesignReport.md)
