@@ -55,6 +55,8 @@ Building the project with gradle tasks should now be enabled. The project can be
 ```sh
 /TicTacToe $ gradle build
 ```
+* Deployment
+   * The lates working push to the master branch on the [git repo](http://github.com/GNNF/TicTacToe/) gets automatically deployed to the webservice [Heroku](https://www.heroku.com/).
 * Travis
     * Signup on [Travis-CI](https://travis-ci.org/) to view build status, tests, etc.
     * Project can be monitored [here](https://travis-ci.org/GNNF/TicTacToe)
