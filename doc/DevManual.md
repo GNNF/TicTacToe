@@ -6,6 +6,7 @@
 #### This manual contains:
 * Source control access
 * Building environment
+* Coding standards
 * Other tools
 
 
@@ -51,5 +52,8 @@ The project can be built by running:
 ```sh
 /TicTacToe $ gradle build
 ```
+#### Coding standards
+* **[Sun's coding standard](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)** with minor modifications were used.
+
 #### Other tools
-* **Travis** was used for continuous integration. Sign up on [Travis-CI](https://travis-ci.org/) using your github account and monitor the [travis-site](https://travis-ci.org/GNNF/TicTacToe) for the project to view prpject status, test results etc.
+* **Heroku and Travis** were used for continuous integration. Sign up on [Travis-CI](https://travis-ci.org/) using your github account and monitor the [Travis site](https://travis-ci.org/GNNF/TicTacToe) for the project to view project status, test results etc. As well as all successfull builds are automatically deployed to the webservice [Heroku](https://heroku.com).
