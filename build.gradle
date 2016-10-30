@@ -41,3 +41,11 @@ test {
 task stage {
     dependsOn installDist
 }
+
+
+apply plugin: 'checkstyle'
+checkstyle {
+
+	configFile = new File("config", "checkstyle.xml")
+  toolVersion = '6.7'
+}

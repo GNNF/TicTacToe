@@ -1,40 +1,52 @@
+/**
+* Domain classes used to produce .....
+* <p>
+* These classes contain the ......
+* </p>
+*
+* @since 1.0
+* @author somebody
+* @version 1.0
+*/
+
 package com.tictactoe;
 
 public class Board {
-	private final int MAX_SIZE = 9;
-	private final char ALLOWED_SYMBOLS[] = new char[] {'X', 'O'};
-	private final int WIN_CONDITIONS[][] = new int[][] {
-		{0,1,2}, 
-		{3,4,5},
-		{6,7,8},
-		{0,3,6},
-		{1,4,7},
-		{2,5,8},
-		{0,4,8},
-		{6,4,2}
+	private static final int MAX_SIZE = 9;
+	private static final char[] ALLOWED_SYMBOLS = new char[] {'X', 'O'};
+	private static final int[][] WIN_CONDITIONS = new int[][] {
+		{0, 1, 2},
+		{3, 4, 5},
+		{6, 7, 8},
+		{0, 3, 6},
+		{1, 4, 7},
+		{2, 5, 8},
+		{0, 4, 8},
+		{6, 4, 2}
 	};
-	private char board[];
+	private char[] board;
 	private int totalPlays;
 
 	Board() {
 		this.init();
 	}
 
-	public void init() {
+	public final void init() {
 		board = new char[MAX_SIZE];
 		this.clear();
 	}
 
-	public boolean isCellEmpty(int cell) {
+	public final boolean isCellEmpty(final int cell) {
 		if (cell < MAX_SIZE && cell >= 0) {
-			if (board[cell] == ' ')
+			if (board[cell] == ' ') {
 				return true;
+			}
 		}
 		//cell is out of bounds or not empty
 		return false;
 	}
 
-	public boolean checkCell(int cell, char symbol) {
+	public final boolean checkCell(final int cell, final char symbol) {
 		if (this.isCellEmpty(cell)) {
 			if (this.isAllowedSymbol(symbol)) {
 				board[cell] = symbol;
@@ -46,11 +58,11 @@ public class Board {
 		return false;
 	}
 
-	public boolean isGameOver() {
+	public final boolean isGameOver() {
 		return (totalPlays == MAX_SIZE || this.isVictorious('O') || this.isVictorious('X'));
 	}
 
-	public boolean isVictorious(char symbol) {
+	public final boolean isVictorious(final char symbol) {
 		if (this.isAllowedSymbol(symbol)) {
 			for (int[] possibleWins : WIN_CONDITIONS) {
 				boolean allSame = false;
@@ -70,19 +82,20 @@ public class Board {
 		return false;
 	}
 
-	public boolean isDraw() {
+	public final  boolean isDraw() {
 		return (!isVictorious('X') && !isVictorious('O') && totalPlays == MAX_SIZE);
 	}
 
-	private boolean isAllowedSymbol(char symbol) {
-		for(char allowedSymbol : ALLOWED_SYMBOLS) {
-			if (symbol == allowedSymbol)
+	private boolean isAllowedSymbol(final char symbol) {
+		for (char allowedSymbol : ALLOWED_SYMBOLS) {
+			if (symbol == allowedSymbol) {
 				return true;
+			}
 		}
 		return false;
 	}
-	
-	public String toString() {
+
+	public final String toString() {
 		String currentBoard =
 		  " " + board[0] + " | " + board[1] + " | " + board[2] + " \n"
 		+ "-----------\n"
@@ -91,12 +104,11 @@ public class Board {
 		+ " " + board[6] + " | " + board[7] + " | " + board[8] + " \n";
 		return currentBoard;
 	}
-	
-	public void clear() {
+
+	public final void clear() {
 		totalPlays = 0;
 		for (int i = 0; i < MAX_SIZE; i++) {
 			board[i] = ' ';
 		}
 	}
 }
-

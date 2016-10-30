@@ -2,26 +2,26 @@ package com.tictactoe;
 
 public class Player {
 
-	protected String name;
-	protected char symbol;
+	private String name;
+	private char symbol;
 
 	public Player() {
-		name = "Unknown";
-		symbol = 'X';
+		this.name = "Unknown";
+		this.symbol = 'X';
 	}
 
-	public String getName() {
-		return name;
+	public final String getName() {
+		return this.name;
 	}
 
-	public void setName(String pname) {
+	public final void setName(final String pname) {
 		this.name = pname;
 	}
 
-	public void setSymbol(char psymbol) {
+	public final void setSymbol(final char psymbol) {
 		this.symbol = psymbol;
 	}
-	public char getSymbol() {
-		return symbol;
+	public final char getSymbol() {
+		return this.symbol;
 	}
 }

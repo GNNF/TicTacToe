@@ -5,18 +5,18 @@ import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
 
-	public static void main(String args[]) {
+	public static void main(final String[] args) {
       org.junit.runner.JUnitCore.main("com.tictactoe.Player");
     }
 
 	@Test
-	public void testGetName(){
+	public final void testGetName() {
 		Player player = new Player();
 		assertEquals("Unknown", player.getName());
 	}
 
 	@Test
-	public void testSetName(){
+	public final void testSetName() {
 		Player player = new Player();
 		String name = "Jon";
 		player.setName(name);
@@ -24,13 +24,13 @@ public class PlayerTest {
 	}
 
 	@Test
-	public void testGetSymbol(){
+	public final void testGetSymbol() {
 		Player player = new Player();
 		assertEquals('X', player.getSymbol());
 	}
 
 	@Test
-	public void testSetSymbol(){
+	public final void testSetSymbol() {
 		Player player = new Player();
 		char symbol = 'O';
 		player.setSymbol(symbol);
