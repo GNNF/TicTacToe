@@ -2,6 +2,12 @@
 
 # Administration manual
 
+## About
+* This manual contains:
+ * Requirements on how to build and run the project locally on a computer
+ * How to run the project
+ * How to deploy and maintain on an external server
+
 ## Build and run
 
 ### Requirements to build and run the project locally
