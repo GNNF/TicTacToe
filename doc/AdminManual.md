@@ -17,7 +17,7 @@
     * Select the appropriate operating system and proceed with the install.
 
 * Git
-    * Dowload [git](https://git-scm.com/download/) and choose current operating system; Windows, Mac or Linux
+    * Download [git](https://git-scm.com/download/) and choose current operating system; Windows, Mac or Linux
     * Set up and run git bash.
 
 Verify java version by executing:
@@ -33,7 +33,7 @@ If the output is something like this:
 ```sh
 $ /c/Program Files (x86)/Java/jdk1.8.0_101/bin
 ```
-With /bin in the end, the variable has to be edited and changed in system properties
+With /bin in the end, the variable must be edited and changed in system properties
 * Clone the github repository:
 ```sh
 $ git clone https://github.com/GNNF/TicTacToe
@@ -56,7 +56,7 @@ Building the project with gradle tasks should now be enabled. The project can be
 /TicTacToe $ gradle build
 ```
 * Deployment
-   * The lates working push to the master branch on the [git repo](http://github.com/GNNF/TicTacToe/) gets automatically deployed to the webservice [Heroku](https://www.heroku.com/).
+   * The latest working push to the master branch on the [git repo](http://github.com/GNNF/TicTacToe/) gets automatically deployed to the web service [Heroku](https://www.heroku.com/).
 * Travis
     * Signup on [Travis-CI](https://travis-ci.org/) to view build status, tests, etc.
     * Project can be monitored [here](https://travis-ci.org/GNNF/TicTacToe)
