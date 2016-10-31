@@ -1,20 +1,21 @@
 package com.tictactoe;
 
-import static spark.Spark.*;
-import java.lang.*;
+import static spark.Spark.get;
+import static spark.Spark.post;
+import static spark.Spark.port;
+import static spark.Spark.staticFiles;
 
-public class Server {
+public final class Server {
 
-  Server() {
+  private Server() {
+      //not called
+   }
 
-  }
-
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     WebTicTacToe game =  new WebTicTacToe();
 
     port(getHerokuAssignedPort());
     staticFiles.location("/public");
-    staticFiles.expireTime(1);
 
     get("/", (request, response) -> {
       response.status(200);
@@ -37,14 +38,11 @@ public class Server {
           if (game.makePlay(play)) {
             game.computerMakePlay();
           }
-        } else {
-          //Add some error
-        }
+        } //Add else with error
       }
-      
       return game.renderGame();
     });
-  } 
+  }
 
   private static int getHerokuAssignedPort() {
     ProcessBuilder processBuilder = new ProcessBuilder();
@@ -54,7 +52,7 @@ public class Server {
     return 5050; //return default port if heroku-port isn't set (i.e. on localhost)
   }
 
-  private static boolean isInteger(String string) {
+  private static boolean isInteger(final String string) {
     try {
         Integer.parseInt(string);
         return true;
@@ -62,5 +60,4 @@ public class Server {
         return false;
     }
   }
-
-} 
+}

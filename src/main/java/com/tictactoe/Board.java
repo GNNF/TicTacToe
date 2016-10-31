@@ -101,7 +101,7 @@ public class Board {
 		}
 	}
 
-	public char getCell(int index) {
+	public final char getCell(final int index) {
 		return board[index];
 	}
 }
