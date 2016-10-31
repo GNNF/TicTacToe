@@ -100,4 +100,8 @@ public class Board {
 			board[i] = ' ';
 		}
 	}
+
+	public char getCell(int index) {
+		return board[index];
+	}
 }
